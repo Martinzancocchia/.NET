@@ -1,0 +1,16 @@
+﻿@model Lab.MVC.Models.TerritoriesView
+@{
+    ViewBag.Title = "Territories Page";
+}
+<h1>Agregar un nuevo territorio</h1>
+
+@using (Html.BeginForm("Insert", "Territories", FormMethod.Post))
+{
+    <label>ID: </label> @Html.TextBoxFor(t => t.TerritoriesId)
+    <label>Name: </label> @Html.TextBoxFor(t => t.TerritoriesName)
+    <label>Region: </label> @Html.TextBoxFor(t => t.TerritoriesRegion)
+
+    <input type="submit" class="btn btn-success" value="Guardar" />
+} 
+
+

@@ -1,0 +1,41 @@
+﻿@model List<Lab.MVC.Models.TerritoriesView>
+@{
+    ViewBag.Title = "Territories Page";
+}
+<h1>Territorios</h1>
+
+<table class="table-bordered">
+    @*<tr>
+            <td>ID</td>
+            <td>Descripcion</td>
+            <td>Region</td>
+
+        </tr>*@
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Region</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var territory in Model)
+            {
+                <tr>
+                    <td>@territory.TerritoriesId</td>
+                    <td>@territory.TerritoriesName</td>
+                    <td>@territory.TerritoriesRegion</td>
+                    <td>@Html.ActionLink("Borrar", "Delete", new { ID = territory.TerritoriesId }, new { onclick = "return confirm('El elemento se borrara definitivamente, ¿desea continuar?')" })</td>
+                    <td>@Html.ActionLink("Actualizar", "Update", new { ID = territory.TerritoriesId }, new { onclick = "return confirm('Esta a punto de modificar un elemento, ¿desea continuar?')" })</td>
+                </tr>
+
+            }
+    </table>
+
+    <div>
+        @Html.ActionLink("Insertar nuevo territorio", "Insert", "Territories")
+    </div>

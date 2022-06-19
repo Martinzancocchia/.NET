@@ -43,5 +43,15 @@ namespace Library.Logic
 
             context.SaveChanges();
         }
+
+        //public void UpdateByID(string ID)
+        //{
+        //    var territorioAActualizar = context.Territories.Find(ID);
+
+        //    territorioAActualizar.TerritoryDescription = territories.TerritoryDescription;
+
+
+        //    context.SaveChanges();
+        //}
     }
 }

@@ -1,0 +1,38 @@
+﻿@model List<Lab.MVC.Models.Character>
+@{
+    ViewBag.Title = "Territories Page";
+}
+<h1>Territorios</h1>
+
+<table class="table-bordered">
+    @*<tr>
+            <td>ID</td>
+            <td>Descripcion</td>
+            <td>Region</td>
+
+        </tr>*@
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">nombre</th>
+                <th scope="col">estado</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var personaje in Model)
+            {
+                <tr>
+                    <td>@personaje.id</td>
+                    <td>@personaje.name</td>
+                    <td>@personaje.status</td>
+                    
+                </tr>
+
+            }
+    </table>
+
+  

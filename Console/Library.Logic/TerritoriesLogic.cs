@@ -43,15 +43,11 @@ namespace Library.Logic
 
             context.SaveChanges();
         }
+        public Territories GetByID(string ID)
+        {
+            var territory = context.Territories.Where(t => t.TerritoryID == ID);
 
-        //public void UpdateByID(string ID)
-        //{
-        //    var territorioAActualizar = context.Territories.Find(ID);
-
-        //    territorioAActualizar.TerritoryDescription = territories.TerritoryDescription;
-
-
-        //    context.SaveChanges();
-        //}
+            return territory.FirstOrDefault();
+        }
     }
 }
